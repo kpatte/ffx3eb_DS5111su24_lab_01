@@ -38,4 +38,18 @@ total_words:
 	@echo "word count all files:"
 	@wc -w *.txt | tail -n 1
 
+setup_env:
+	sudo apt-get update
+	sudo apt-get install -y python3.12-venv
+	python3 -m venv env
+	./env/bin/pip install --upgrade pip
+	./env/bin/pip install -r requirements.txt
 
+format:
+	./env/bin/black text_processing.py
+	./env/bin/black test_text_processing.py
+lint:
+	./env/bin/pylint text_processing.py
+
+test:
+	./env/bin/pytest test_text_processing.py
