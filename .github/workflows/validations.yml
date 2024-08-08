@@ -31,7 +31,9 @@ jobs:
         run: pwd
       - name: Run non integration tests
         run: |
-          make test
+          pytest -v -m "not integration" tests/
       - name: Run integration tests
         run: |
-          make test-integration
+          pytest -v -m integration tests/
+
+
