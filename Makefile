@@ -57,4 +57,4 @@ lint:
 	./env/bin/pylint text_processing.py
 
 test:
-	./env/bin/pytest test_text_processing.py
+	./env/bin/pytest tests/
