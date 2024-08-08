@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           make env
-          update
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with pytest
         run: |
           pytest -vvx tests/
