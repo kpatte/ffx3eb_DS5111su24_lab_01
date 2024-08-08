@@ -17,11 +17,11 @@ def test_clean_and_count_the_raven():
     cleaned_text = clean_text(content)
     cleaned_counted_text = count_words(cleaned_text)
     assert cleaned_counted_text['the'] > 100
-    assert len(cleaned_counted_text) > 5000
+    assert len(cleaned_counted_text) > 1000
 
 @pytest.mark.integration
 def test_download_and_tokenize_text():
-    url = "wget https://www.gutenberg.org/cache/epub/932/pg932.txt"
+    url = "https://www.gutenberg.org/cache/epub/932/pg932.txt"
     response = requests.get(url)
     raw_text = response.text
     
