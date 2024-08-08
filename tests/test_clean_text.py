@@ -41,8 +41,8 @@ def test_clean_french():
     assert isinstance(result, str), f"clean_text failed on french text"
     assert not re.search (r'[^\w\s]', result), f"clean_text failed to remove all punctuation in french text"
 
-@pytest.mark.parametrize("filename", [
-        "pg17192.txt"
+@pytest.mark.parametrize('filename', [
+        'pg17192.txt'
 ])
 def test_clean_full_file(filename):
     with open(filename, 'r') as file:
@@ -56,10 +56,10 @@ def test_clean_all_english_files():
     # When I pass _text_ to the 'clean_text()' function
     # I should get a string returned with that is longer than length 0
     filenames = [
-        "pg17192.txt",
-        "pg932.txt",
-        "pg1063.txt",
-        "pg10031.txt"
+        'pg17192.txt',
+        'pg932.txt',
+        'pg1063.txt',
+        'pg10031.txt'
     ]
     full_text = ""
     for filename in filenames:

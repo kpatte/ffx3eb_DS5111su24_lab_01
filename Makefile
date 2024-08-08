@@ -42,7 +42,6 @@ env:
 	sudo apt-get update
 	python3 -m venv env
 	./env/bin/pip install --upgrade pip
-
 	
 update: env
 	. ./env/bin/activate && pip install -r requirements.txt
@@ -56,4 +55,14 @@ lint:
 	./env/bin/pylint text_processing.py
 
 test:
-	./env/bin/pytest test_text_processing.py
+	pytest -v -m "not integration" tests/
+
+test-integration:
+	pytest -v -m integration tests/
+
+test-all:
+	pytest -v tests/
+
+
+test:
+	./env/bin/pytest tests/
