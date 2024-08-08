@@ -42,14 +42,12 @@ env:
 	sudo apt-get update
 	python3 -m venv env
 	./env/bin/pip install --upgrade pip
-
-
+	
 update: env
 	. ./env/bin/activate && pip install -r requirements.txt
 
 clean:
 	rm -rf env
-
 format:
 	./env/bin/black text_processing.py
 	./env/bin/black test_text_processing.py
