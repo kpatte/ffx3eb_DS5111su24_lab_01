@@ -62,5 +62,5 @@ tests: lint
 	./env/bin/pytest tests/
 
 tests_for_workflow: lint_for_workflow
-	pytest tests/
+	pytest src/tests/
 
