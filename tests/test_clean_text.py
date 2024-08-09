@@ -8,8 +8,10 @@ import sys
 import subprocess
 import pytest
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from ffx3eb.text_processing import clean_text
-
+try:
+    from ffx3eb.text_processing import clean_text
+except ImportError:
+    from src.ffx3eb.text_processing import clean_text
 
 def test_clean_raven_snippet():
     """

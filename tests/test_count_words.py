@@ -7,8 +7,10 @@ import os
 import subprocess
 import pytest
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from ffx3eb.text_processing import count_words
-
+try:
+    from ffx3eb.text_processing import count_words
+except ImportError:
+    from src.ffx3eb.text_processing import count_words
 
 def test_count_raven_snippet():
     """

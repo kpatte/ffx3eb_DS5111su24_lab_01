@@ -7,8 +7,10 @@ import os
 import subprocess
 import pytest
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from ffx3eb.text_processing import tokenize
-
+try:
+    from ffx3eb.text_processing import tokenize
+except ImportError:
+    from src.ffx3eb.text_processing import tokenize 
 
 def test_tokenize_raven_snippet():
     """
