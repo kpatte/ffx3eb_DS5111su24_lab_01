@@ -51,18 +51,10 @@ clean:
 format:
 	./env/bin/black text_processing.py
 	./env/bin/black test_text_processing.py
+
 lint:
-	./env/bin/pylint text_processing.py
+	./env/bin/pylint src/ffx3eb/*.py tests/*.py
 
-test:
-	pytest -v -m "not integration" tests/
-
-test-integration:
-	pytest -v -m integration tests/
-
-test-all:
-	pytest -v tests/
-
-
-test:
+tests: lint
 	./env/bin/pytest tests/
+
