@@ -7,7 +7,7 @@ import re
 import sys
 import subprocess
 import pytest
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+#sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 try:
     from ffx3eb.text_processing import clean_text
 except ImportError:
