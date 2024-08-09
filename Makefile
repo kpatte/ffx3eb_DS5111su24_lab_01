@@ -56,7 +56,7 @@ lint:
 	./env/bin/pylint src/ffx3eb/*.py tests/*.py
 
 tests: lint
-        ./env/bin/pytest tests/
+	./env/bin/pytest tests/
 
 lint_for_workflow: 
 	pylint src/ffx3eb/*.py tests/*.py || true
