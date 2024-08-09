@@ -62,5 +62,5 @@ lint_for_workflow:
 	pylint src/ffx3eb/*.py tests/*.py || true
 
 tests_for_workflow: lint_for_workflow
-	PYTHONPATH=. pytest tests/*py
+	pytest tests/*py
 
