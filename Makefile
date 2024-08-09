@@ -55,6 +55,12 @@ format:
 lint:
 	./env/bin/pylint src/ffx3eb/*.py tests/*.py
 
+lint_for_workflow: 
+	pylint src/ffx3eb*py tests/*.py
+
 tests: lint
 	./env/bin/pytest tests/
+
+tests_for_workflow: lint
+	pytest tests/
 

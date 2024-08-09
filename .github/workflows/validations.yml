@@ -30,6 +30,6 @@ jobs:
       - name: Print working directory
         run: pwd
       - name: Lint with Pylint
-        run: make lint
+        run: make lint_for_workflow
       - name: Test with Pytest
-        run: make tests
+        run: make tests_for_workflow
