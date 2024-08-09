@@ -55,13 +55,12 @@ format:
 lint:
 	./env/bin/pylint src/ffx3eb/*.py tests/*.py
 
+tests: lint
+        ./env/bin/pytest tests/
+
 lint_for_workflow: 
 	pylint src/ffx3eb/*.py tests/*.py || true
 
-tests: lint
-	./env/bin/pytest tests/
-
 tests_for_workflow: lint_for_workflow
-	pytest tests_for_workflow: lint_for_workflow
 	PYTHONPATH=. pytest tests/*py
 
